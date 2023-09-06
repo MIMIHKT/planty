@@ -1,0 +1,256 @@
+/*
+Theme Name: Planty
+Theme URI: https://github.com/tidythemes/blankslate
+Author: TidyThemes
+Template: BlankSlate
+Author URI: https://github.com/tidythemes
+Description: Donations: https://calmestghost.com/donate. BlankSlate is the definitive WordPress boilerplate starter theme. We've carefully constructed the most clean and minimalist theme possible for designers and developers to use as a base to build websites for clients or to build completely custom themes from scratch. Clean, simple, unstyled, semi-minified, unformatted, and valid code, SEO-friendly, jQuery-enabled, no programmer comments, standardized and as white label as possible, and most importantly, the CSS is reset for cross-browser-compatability and no intrusive visual CSS styles have been added whatsoever. A perfect skeleton theme. For support and suggestions, go to: https://github.com/tidythemes/blankslate/issues. Thank you.
+Tags: accessibility-ready, one-column, two-columns, custom-menu, featured-images, microformats, sticky-post, threaded-comments, translation-ready
+Version: 2023
+Requires at least: 5.2
+Tested up to: 6.1
+Requires PHP: 7.0
+License: GNU General Public License v3 or Later
+License URI: https://www.gnu.org/licenses/gpl.html
+Text Domain: blankslate
+
+BlankSlate WordPress Theme © 2011-2023 TidyThemes
+BlankSlate is distributed under the terms of the GNU GPL
+*/
+/* Ajout des fonts */
+@import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
+
+body {
+    margin: 0;
+}
+
+header a img {
+    width: 191.61px;
+    margin: 31px 37px;
+}
+
+header.main-head {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+}
+
+ul#menu-principal {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    gap: 24px;
+}
+
+nav ul li a {
+    color:#000;
+    text-decoration: none;
+    font-family: 'Syne', sans-serif;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+#menu-item-176 a {
+    background-color: #DC9F96;
+    padding: 31px 61px;
+    display: block;
+    color:#fff;
+    padding-bottom: 40px;
+}
+
+footer a {
+    text-decoration: none;
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  
+    background-color: white;
+    margin: 0px;
+    padding: 10px;
+}
+figure.elementor-image-box-img > img {
+    max-height: 139px;
+}
+
+/* formulaire nous rencontrer ! */
+
+/*bouton commander */
+input.wpcf7-form-control.wpcf7-submit.has-spinner{
+    background-color: #E0b9b4;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'syne';
+    width: 198px;
+    height: 55px;
+    color: white;
+    border-color: #e0b9b4;
+
+       &:hover{
+        background-color: #c02e44;
+       }
+}
+
+       p {
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse
+}
+  /*..*/
+
+  /* barre de recherche */
+input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required {
+    border-radius: 7px;
+    height: 71px;
+    border-color: white; 
+}
+textarea.wpcf7-form-control.wpcf7-textarea {
+    border-radius: 7px;
+    height: 283px;
+    border-color: white; 
+}       
+
+/* formulaire de la  page commander */
+
+label {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Syne';
+}
+
+
+/* Formulaire Nous Contacter - Rencontrer */
+.wpcf7-form label {
+    color: #000;
+    max-width: 303.33px;
+}
+.wpcf7-form input {
+    border: none;
+}
+.wpcf7-form textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
+    height: 237px;
+    width: 383px;
+}
+wpcf7-form input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required {
+    border: none;
+}
+
+
+/*barre de commander +/- */
+
+input[type="text"] {
+    width: 51px;
+    height: 56px;
+    border: white;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+input.bouton.\32 {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    width: 31px;
+    height: 56px;
+    background-color: #dc9f93;
+}
+
+button {
+    width: 100px;
+    height: 56px;
+    border-radius: 5px;
+    background-color: #e0b9b4;
+    border: #e0b9b4;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    gap: 45px;
+}
+
+/* Formulaire Commander */
+#formulaire-commande > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.livraison {
+    margin-left: 36px;
+}
+
+/* les titres du formulaire commander */
+
+.informations h2 {
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Syne';
+}
+  
+.livraison h2{
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Syne';
+}
+/*description du formulaire */
+
+.informations label,
+.livraison label{
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    display: inline-block;
+    margin-bottom: 24px;
+}
+#formulaire-commande > p  {
+    text-align:center;
+}
+.wpcf7-spinner{
+    display:none;
+}
+
+/* mise en forme des carrés */
+
+input.wpcf7-form-control {
+    width: 383px;
+    height: 71px;
+    border-radius: 7px;
+}
+.cmdBtn {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.cmdBtn span button {
+    width: 30px;
+    border-radius: 0;
+    height: 28px;
+}
+div.cmdBtn > span > button:nth-child(1) {
+    border-top-right-radius: 7px;
+    border-bottom: 1px solid white;
+} 
+div.cmdBtn > span > button:nth-child(2){
+    border-bottom-right-radius:7px;
+}
+.cmdBtn input[type="text"] {
+    text-align: center;
+}
+.informations {
+    border-right: 1px solid white;
+}
+#formulaire-commande p {
+    display:block;
+}
+/* Media Queries */
+
+@media screen and (max-width: 320px) {
+    
+  }
+  
