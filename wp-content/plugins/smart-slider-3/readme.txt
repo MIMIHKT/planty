@@ -4,7 +4,7 @@ Tags: slider, wordpress slider, image slider, layer slider, responsive slider, s
 Donate link: https://sites.fastspring.com/nextend/product/smartslider3donate
 Requires at least: 5.0
 Tested up to: 6.2.1
-Stable tag: 3.5.1.18
+Stable tag: 3.5.1.19
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -208,6 +208,9 @@ Of course! Smart Slider use protocol relative urls which works fine on http:// a
 9. Layer slider with layers styles. Made with FREE version.
 
 == Changelog ==
+
+= 3.5.1.19 - 14. August 2023 =
+* Fix: Some WordPress 6.3 block theme editors (site editor, widget manager or page editor) won't load next to Smart Slider.
 
 = 3.5.1.18 - 10. August 2023 =
 * Fix: WP Grid Builder conflict, which made WP Grid Builder's checkbox filtering not work.

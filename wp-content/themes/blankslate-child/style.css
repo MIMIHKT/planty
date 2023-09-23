@@ -95,6 +95,8 @@ input.wpcf7-form-control.wpcf7-submit.has-spinner{
        &:hover{
         background-color: #c02e44;
        }
+        
+       
 }
 
        p {
@@ -232,6 +234,9 @@ input.wpcf7-form-control {
     border-radius: 0;
     height: 28px;
 }
+button:hover {
+    background-color: #c02e44;
+}
 div.cmdBtn > span > button:nth-child(1) {
     border-top-right-radius: 7px;
     border-bottom: 1px solid white;
@@ -248,9 +253,80 @@ div.cmdBtn > span > button:nth-child(2){
 #formulaire-commande p {
     display:block;
 }
+input.wpcf7-form-control {
+    width: 100%;
+}
 /* Media Queries */
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+    header > a {
+        display: block;
+        text-align: center;
+    }
+    ul#menu-principal {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap:0;
+        margin:0;
+        padding:0;
+    }
+    nav ul li {
+        text-align: center;
+        display:block;
+    }
+    nav ul li a {
+        display: block;
+        width: 100%;
+    }
+    #menu-item-176 a {
+        padding: 31px 50%;
+        margin-top: 24px;
+    }
+
+    #formulaire-commande > div {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .informations {
+        border-right: none;
+    }
+    h1.elementor-heading-title.elementor-size-default{
+        word-wrap: break-word;
+    }
+    .livraison {
+        margin-left: 0;
+    }
+    input.wpcf7-form-control {
+        width: 100%;
+    }
     
-  }
-  
+
+    .cmdBtn {
+        grid-template-columns: auto 30% auto;
+    }
+    .cmdBtn input[type="text"] {
+        width: 100%;
+    }
+
+    div.cmdBtn > span > button {
+        border: none;
+        border-radius: 0;
+        height: 100%;
+        width: 100%;
+    }
+    .cmdBtn span {
+        display: grid;
+        grid-template-columns: auto auto;
+        margin: 0 5px;
+    }
+    div.cmdBtn > span > button:nth-child(1),
+    div.cmdBtn > span > button:nth-child(2){
+        border-radius: 0;
+        border-bottom: 0;
+    }
+    div.cmdBtn > span > button:nth-child(1) {
+        border-right: 1px solid white;
+    }
+}

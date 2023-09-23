@@ -24,7 +24,13 @@ class AssetInjector {
 
     private $headTokens = array();
 
+    private $useAlternativeAction = false;
+
     protected function init() {
+        if (is_admin()) {
+            $this->useAlternativeAction = true;
+        }
+
 
         if (defined('WP_CLI') && WP_CLI) {
             //Do not start output buffering while WP_CLI active
@@ -37,23 +43,6 @@ class AssetInjector {
             }
 
             $this->addInjectCSSComment();
-
-            /**
-             * Fix for Gutenberg plugin editor and Full Site Editing theme editor conflict
-             *
-             * @see SSDEV-3896
-             */
-            add_action('enqueue_block_editor_assets', function () {
-                $this->removeInjectCSSComment();
-            }, -1);
-            add_action('load-site-editor.php', function () {
-                $this->removeInjectCSSComment();
-            }, -1);
-            add_filter('block_editor_settings_all', function ($settings) {
-                $this->addInjectCSSComment();
-
-                return $settings;
-            }, 1000000);
 
             add_filter('wordpress_prepare_output', array(
                 $this,
@@ -168,19 +157,43 @@ class AssetInjector {
     }
 
     public function addInjectCSSComment() {
-
-        add_action('wp_print_scripts', array(
-            $this,
-            'injectCSSComment'
-        ));
+        if (!$this->useAlternativeAction) {
+            add_action('wp_print_scripts', array(
+                $this,
+                'injectCSSComment'
+            ));
+        } else {
+            /**
+             * @see SSDEV-3909
+             * The Site editor fires the wp_print_scripts action inside a the wp.editSite.initializeEditor script.
+             * The Widgets editor fires the wp_print_scripts action inside a the wp.editWidgets.initialize script.
+             * The Customizer fires the wp_print_scripts action inside a the wp.customizeWidgets.initialize script.
+             */
+            add_action('admin_head', array(
+                $this,
+                'injectCSSComment'
+            ));
+        }
     }
 
     public function removeInjectCSSComment() {
-
-        remove_action('wp_print_scripts', array(
-            $this,
-            'injectCSSComment'
-        ));
+        if (!$this->useAlternativeAction) {
+            remove_action('wp_print_scripts', array(
+                $this,
+                'injectCSSComment'
+            ));
+        } else {
+            /**
+             * @see SSDEV-3909
+             * The Site editor fires the wp_print_scripts action inside a the wp.editSite.initializeEditor script.
+             * The Widgets editor fires the wp_print_scripts action inside a the wp.editWidgets.initialize script.
+             * The Customizer fires the wp_print_scripts action inside a the wp.customizeWidgets.initialize script.
+             */
+            remove_action('admin_head', array(
+                $this,
+                'injectCSSComment'
+            ));
+        }
     }
 
     public function injectCSSComment() {
