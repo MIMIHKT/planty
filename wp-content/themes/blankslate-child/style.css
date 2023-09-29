@@ -46,7 +46,7 @@ nav ul li a {
     color:#000;
     text-decoration: none;
     font-family: 'Syne', sans-serif;
-   
+    
 }
 
 nav ul li {
@@ -282,7 +282,7 @@ input.wpcf7-form-control {
     }
     nav ul li a {
         display: block;
-        
+        padding-top: 22px;
     }
     #menu-item-176 a {
         padding: 20px 22%;
