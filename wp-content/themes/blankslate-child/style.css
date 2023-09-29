@@ -46,11 +46,13 @@ nav ul li a {
     color:#000;
     text-decoration: none;
     font-family: 'Syne', sans-serif;
+    padding-top: 20px;
 }
 
 nav ul li {
     display: flex;
     align-items: center;
+
 }
 
 #menu-item-176 a {
@@ -87,7 +89,7 @@ input.wpcf7-form-control.wpcf7-submit.has-spinner{
     font-size: 15px;
     font-weight: 400;
     font-family: 'syne';
-    width: 198px;
+    width: 138px;
     height: 55px;
     color: white;
     border-color: #e0b9b4;
@@ -138,7 +140,7 @@ label {
 }
 .wpcf7-form textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
     height: 237px;
-    width: 383px;
+   
 }
 wpcf7-form input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required {
     border: none;
@@ -275,14 +277,15 @@ input.wpcf7-form-control {
     }
     nav ul li {
         text-align: center;
-        display:block;
+        display:flex;
+        justify-content: center;
     }
     nav ul li a {
         display: block;
-        width: 100%;
+        
     }
     #menu-item-176 a {
-        padding: 31px 50%;
+        padding: 20px 22%;
         margin-top: 24px;
     }
 
@@ -329,4 +332,5 @@ input.wpcf7-form-control {
     div.cmdBtn > span > button:nth-child(1) {
         border-right: 1px solid white;
     }
+  
 }
